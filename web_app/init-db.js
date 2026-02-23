@@ -29,8 +29,8 @@ db.serialize(() => {
   );
 
   //create the first user
-  const adminEmail = "user@company.com";
-  const adminPassword = "user123";
+  const adminEmail = "admin@company.com";
+  const adminPassword = "admin123";
   const saltRounds = 10;
 
   //lets run the database to look if are some users or create one
@@ -43,7 +43,7 @@ db.serialize(() => {
         const hashedPassword = await bcrypt.hash(adminPassword, saltRounds);
         db.run(
           "INSERT INTO users (email, password, role) VALUES (?, ?, ?)",
-          [adminEmail, hashedPassword, "user"],
+          [adminEmail, hashedPassword, "admin"],
           (err) => {
             if (err)
               console.error("unexpected error inserting admin: ", err.message);

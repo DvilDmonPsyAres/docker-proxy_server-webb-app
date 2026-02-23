@@ -4,7 +4,7 @@ const httpProxy = require("http-proxy");
 
 // configuramos el objetivo al que apuntara nuestro proxyserver
 const proxy = httpProxy.createProxyServer({
-  target: "http://localhost:3000", //aqui es donde corre nuestra otra app
+  target: "http://app:3000", //aqui es donde corre nuestra otra app
   changeOrigin: true,
 });
 
