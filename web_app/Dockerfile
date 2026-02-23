@@ -1,5 +1,5 @@
 # escogemos una base ligera
-FROM node:20-alpine
+FROM node:20-slim
 
 #DIRECCIONAMOS AL DIRECTORIO DENTRO DEL CONTENEDOR
 WORKDIR /web_app
@@ -17,6 +17,4 @@ COPY . .
 EXPOSE 3000
 
 #COMANDOS DE ARRANQUE
-CMD ["node", "app.js"]
-#vamos a cambiar en nuestro proxy el objetivo
-#ahora vamos a nuestro proxy-server a crear el docker file
+CMD ["sh", "-c", "node init-db.js && node app.js"]

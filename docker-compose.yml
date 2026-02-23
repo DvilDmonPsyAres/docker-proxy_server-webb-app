@@ -5,7 +5,7 @@ services:
     build: ./web_app
     container_name: web_app
     restart: always
-    #listo #necesitamos agregar a nuestro sistema una manera de registrar usuarios ya que el usuario que teniamos registrado al empezar el proyecto en docker se reinicia la base de datos :)
+
     expose:
       - "3000"
   #error de direccionamiento jeje
@@ -19,6 +19,3 @@ services:
 
     depends_on:
       - app
-#hay que ordenar la indentacion es decir los espacios
-#LISTO A CONSTRUIR NUESTRO PROYECTO
-#listo
